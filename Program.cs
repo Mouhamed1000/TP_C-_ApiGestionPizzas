@@ -28,4 +28,6 @@ app.UseSwaggerUI(c =>
 
 app.MapGet("/", () => "Bonjour Sénégal!");
 
+app.MapGet("/pizzas", async (PizzaDb db) => await db.Pizzas.ToListAsync());
+
 app.Run();
