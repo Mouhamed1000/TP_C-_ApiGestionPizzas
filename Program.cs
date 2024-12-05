@@ -6,6 +6,8 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "DataSource=Pizzas.db";
+
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddDbContext<PizzaDb>(options =>
